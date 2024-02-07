@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+<!-- Launch actuator related nodes -->
+
+
+        <!--node pkg="lidar_transform" type="lidar_mock" name="lidar_mock" output="screen"/-->
+        <node pkg="lidar_transform" type="hokuyo" name="hokuyo" output="screen"/>
+	<node pkg="lidar_transform" type="servo_mock" name="servo_mock" output="screen">
+        </node>
+	<node pkg="lidar_transform" type="lidar_transform_node" name="lidar_transform_node" output="screen">
+        </node>
+
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find lidar_transform)/config/view.rviz" />
+
+          <!--node name="urg_node" pkg="urg_node" type="urg_node" output="screen">
+    <param name="ip_address" value=""/>
+    <param name="serial_port" value="/dev/ttyACM0"/>
+    <param name="serial_baud" value="115200"/>
+    <param name="frame_id" value="laser"/>
+    <param name="calibrate_time" value="false"/>
+    <param name="publish_intensity" value="false"/>
+    <param name="publish_multiecho" value="false"/>
+    <param name="angle_min" value="-2.0943951023931953"/>
+    <param name="angle_max" value="2.0943951023931953"/>
+    <param name="use_sim_time" value="true"/>
+
+  </node-->
+    <!--param name="publish_frequency" type="double" value="10" /-->
+
+	<!--node pkg="rqt_graph" type="rqt_graph" name="rqt_graph"/-->
+</launch>
+
