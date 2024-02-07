@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+   <master auto="start"/>
+ <!-- Run the map server --> 
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find uvd_navigation)/maps/uvd_map.yaml">
+     <param name="frame_id" value="odom"/>
+     </node>
+ <!--- Run AMCL
+    <include file="$(find faby_navigation)/amcl/amcl_omni.launch" />-->
+
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find uvd_navigation)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find uvd_navigation)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find uvd_navigation)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find uvd_navigation)/config/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find uvd_navigation)/config/base_local_planner_params.yaml" command="load" />
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+    <param name="controller_frequency" value="4.0" />  
+
+   </node>
+ 
+</launch> 

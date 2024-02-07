@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="uv_robot">
+
+  <link name="robot_footprint">
+  </link> 
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.3463E-06 0.228 -0.0071608"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.22238"
+        ixy="-1.8058E-07"
+        ixz="-2.4839E-06"
+        iyy="0.099832"
+        iyz="-0.0022073"
+        izz="0.21419" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/new_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/new_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+   <joint name="robot_footprint_joint" type="fixed">
+    <parent link="robot_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+ </joint>
+ 
+  <link
+    name="RF_Link">
+    <inertial>
+      <origin
+        xyz="-0.012173 0.0039505 0.026007"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00012799"
+        ixy="-4.0847E-10"
+        ixz="1.4585E-10"
+        iyy="0.00012799"
+        iyz="5.1701E-10"
+        izz="0.00019475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/RF_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/RF_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rf"
+    type="fixed">
+    <origin
+      xyz="-0.148119970352197 -0.162879572443269 0.0458883267180475"
+      rpy="-1.5707963267949 0.641104313859877 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_Link">
+    <inertial>
+      <origin
+        xyz="-0.012173 0.0039539 0.026009"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00012799"
+        ixy="-4.0494E-10"
+        ixz="1.7015E-10"
+        iyy="0.00012799"
+        iyz="5.1344E-10"
+        izz="0.00019475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/LF_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/LF_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_lf"
+    type="fixed">
+    <origin
+      xyz="0.148119970352196 -0.16287957244327 0.0541116732819477"
+      rpy="1.5707963267949 -0.641104313859881 1.57079632679489" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LB_Link">
+    <inertial>
+      <origin
+        xyz="-0.012181 -0.0039405 -0.025889"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00012799"
+        ixy="4.0647E-10"
+        ixz="-1.7085E-10"
+        iyy="0.00012799"
+        iyz="5.1777E-10"
+        izz="0.00019475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/LB_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/LB_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_lb"
+    type="fixed">
+    <origin
+      xyz="0.200000000000001 0.162827142693936 0.0460462465501888"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="LB_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RB_Link">
+    <inertial>
+      <origin
+        xyz="-0.012173 0.0039539 0.026009"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00012799"
+        ixy="-4.0494E-10"
+        ixz="1.7015E-10"
+        iyy="0.00012799"
+        iyz="5.1344E-10"
+        izz="0.00019475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/RB_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://uvd_description/meshes/RB_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_rb"
+    type="fixed">
+    <origin
+      xyz="-0.148119970352196 0.162879572443268 0.054111673281953"
+      rpy="1.5707963267949 -0.64110431385987 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="RB_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

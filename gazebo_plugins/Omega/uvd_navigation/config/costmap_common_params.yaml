@@ -1,0 +1,9 @@
+obstacle_range: 1.5
+
+footprint: [[0.20,0.20], [0.2,-0.2],[-0.2,-0.2],[-0.2,0.2]]
+#robot_radius: ir_of_robot
+inflation_radius: 0.2
+
+observation_sources: point_cloud_sensor
+
+point_cloud_sensor: {sensor_frame: realsense_optical_link, data_type: PointCloud2, topic: /realsense/depth/points , marking: true, clearing: true}

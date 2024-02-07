@@ -1,0 +1,55 @@
+<launch>
+  <!-- pointcloud_to_laserscan -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+      <remap from="cloud_in" to="/realsense/depth/points"/>
+      <remap from="scan" to="/realsense/laserscan" />
+      <rosparam>
+        target_frame: realsense_link
+        transform_tolerance: 0.01
+        min_height: 0.0
+        max_height: 1.0
+        
+        angle_min: -1.5708
+        angle_max: 1.5708
+        angle_increment: 0.0087
+        scan_time: 0.3333
+        range_min: 0.45
+        range_max: 4.0
+        use_inf: true
+        
+        #concurrency_level affects number of pc queued for processing and the number of threadsused
+        # 0: Detect number of cores
+        # 1: Single threaded
+        # 2: inf : Parallelism level
+        concurrency_level: 1
+      </rosparam>
+    </node> 
+
+  <!-- SLAM -->
+  <group ns="rtabmap">
+    <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start">
+          <param name="frame_id" type="string" value="base_footprint"/>
+          <param name="frame_id"            type="string" value="robot_footprint"/>
+          <param name="odom_frame_id"       type="string" value="odom"/>
+          <param name="subscribe_depth" type="bool" value="true"/>
+          <param name="subscribe_scan" type="bool" value="true"/>
+
+          <remap from="odom" to="/odom"/>
+          <remap from="scan" to="/realsense/laserscan"/>
+
+          <remap from="rgb/image"       to="/realsense/color/image_raw"/>
+          <remap from="depth/image"     to="/realsense/depth/points"/>
+          <remap from="rgb/camera_info" to="/realsense/color/camera_info"/>
+          <param name="queue_size" type="int" value="10"/>
+
+          <!-- RTAB-Map's parameters -->
+          <param name="RGBD/ProximityBySpace"     type="string" value="false"/>
+          <param name="RGBD/AngularUpdate"        type="string" value="0.01"/>
+          <param name="RGBD/LinearUpdate"         type="string" value="0.01"/>
+          <param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
+          <param name="Reg/Force3DoF"             type="string" value="true"/>
+          <param name="Vis/MinInliers"            type="string" value="12"/>
+    </node>
+    
+  </group>
+</launch>

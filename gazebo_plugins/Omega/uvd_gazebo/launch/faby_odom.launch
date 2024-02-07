@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="faby_description" type="faby_odom.py" name="faby_odom" output="screen" />
+</launch>

@@ -1,0 +1,429 @@
+<?xml version="1.0"?>
+
+<robot name="test_bot">
+
+<!--Materials-->
+  <material name="blue">
+    <color rgba="0 0 0.8 1"/>
+  </material>
+  <material name="black">
+    <color rgba="0 0 0 1"/>
+  </material>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
+
+<!--Base-->
+
+  <link name="base">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <visual>
+      <geometry>
+         <box size="0.4 0.3 0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.125"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+         <box size="0.4 0.3 0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.125"/>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+  </link>
+
+  <link name="uv_base">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <visual>
+      <geometry>
+         <cylinder length="1.0" radius="0.085"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+         <cylinder length="1.0" radius="0.085"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="uv_base_body" type="fixed">
+    <parent link="base"/>
+    <child link="uv_base"/>
+    <origin rpy="0 0 0" xyz="0 0 0.6"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <dynamics damping="1.0" friction="1.0"/>
+    <limit effort="10000" velocity="1000"/>
+  </joint>
+
+  <link name="uv_top">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <visual>
+      <geometry>
+         <box size="0.2 0.2 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+         <box size="0.4 0.3 0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="10"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="uv_base_top" type="fixed">
+    <parent link="uv_base"/>
+    <child link="uv_top"/>
+    <origin rpy="0 0 0" xyz="0 0 0.45"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <dynamics damping="1.0" friction="1.0"/>
+    <limit effort="10000" velocity="1000"/>
+  </joint>
+
+<!--front_right_wheel-->
+  <link name="front_right_wheel">
+    <visual>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </visual>
+    <collision>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </collision>
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="0.14" ixy="0.0" ixz="0.0" iyy="0.14" iyz="0.0" izz="0.12"/>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </inertial>
+  </link>
+
+  <joint name="base_to_front_right_wheel" type="fixed">
+    <parent link="base"/>
+    <child link="front_right_wheel"/>
+    <origin rpy="0 0 0" xyz="0.175 -0.175 0"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <dynamics damping="1.0" friction="1.0"/>
+    <limit effort="10000" velocity="1000"/>
+  </joint>
+
+<!--back_right_wheel-->
+  <link name="back_right_wheel">
+    <visual>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </visual>
+    <collision>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </collision>
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="0.14" ixy="0.0" ixz="0.0" iyy="0.14" iyz="0.0" izz="0.12"/>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </inertial>
+  </link>
+
+  <joint name="base_to_back_right_wheel" type="fixed">
+    <parent link="base"/>
+    <child link="back_right_wheel"/>
+    <origin rpy="0 0 0" xyz="-0.175 -0.175 0"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <dynamics damping="1.0" friction="1.0"/>
+    <limit effort="10000" velocity="1000"/>
+  </joint>
+
+<!--front_left_wheel-->
+  <link name="front_left_wheel">
+    <visual>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </visual>
+    <collision>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </collision>
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="0.14" ixy="0.0" ixz="0.0" iyy="0.14" iyz="0.0" izz="0.12"/>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </inertial>
+  </link>
+
+  <joint name="base_to_front_left_wheel" type="fixed">
+    <parent link="base"/>
+    <child link="front_left_wheel"/>
+    <origin rpy="0 0 0" xyz="0.175 0.175 0"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <dynamics damping="1.0" friction="1.0"/>
+    <limit effort="10000" velocity="1000"/>
+  </joint>
+
+<!--back_left_wheel-->
+  <link name="back_left_wheel">
+    <visual>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </visual>
+    <collision>
+      <geometry>
+      <cylinder length="0.05" radius="0.05"/>
+      </geometry>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </collision>
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="0.14" ixy="0.0" ixz="0.0" iyy="0.14" iyz="0.0" izz="0.12"/>
+      <origin rpy="1.5707 0 0" xyz="0 0 0"/> 
+    </inertial>
+  </link>
+
+  <joint name="base_to_back_left_wheel" type="fixed">
+    <parent link="base"/>
+    <child link="back_left_wheel"/>
+    <origin rpy="0 0 0" xyz="-0.175 0.175 0"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <dynamics damping="1.0" friction="1.0"/>
+    <limit effort="10000" velocity="1000"/>
+  </joint>
+
+<!--controller plugin-->
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+<!--Camera-->
+<link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+       <mesh filename="package://uvd_description/meshes/camera_link.stl"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+       <mesh filename="package://uvd_description/meshes/camera_link.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+   
+  <joint name="camera_joint" type="fixed">
+    <parent link="uv_top"/>
+    <child link="camera_link"/>
+    <axis xyz="0 0 0" />
+    <origin xyz="0.105 0 0" rpy="0 0 0"/>
+  </joint>
+
+<!--camera plugins-->
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rrbot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+<!--intel realsense depth camera-->
+  <link name="realsense_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+       <mesh filename="package://uvd_description/meshes/realsense_link.stl"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+       <mesh filename="package://uvd_description/meshes/realsense_link.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0.675" rpy="-1.5707 0 -1.5707"/>
+    <parent link="base"/>
+    <child link="camera_frame_optical"/>
+  </joint>
+  
+  <link name="camera_frame_optical"/>
+
+  <joint name="base_to_depth_camera" type="fixed">
+    <parent link="base"/>
+    <child link="realsense_link"/>
+    <origin xyz="0.0925 0 0.675" rpy="0 0 0"/>
+  </joint>
+
+<!--intel realsense depth camera plugin-->
+  <gazebo reference="realsense_link">
+   <sensor name="realsense" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="realsense_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>realsense_ir</cameraName>
+      <imageTopicName>/realsense/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/realsense/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/realsense/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/realsense/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/realsense/depth/points</pointCloudTopicName>
+      <frameName>camera_frame_optical</frameName>
+      <pointCloudCutoff>0.05</pointCloudCutoff>
+      <pointCloudCutoffMax>3</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+   </sensor>
+  </gazebo>
+
+<!--IMU-->
+  <link name="imu_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="blue"/>
+      <geometry>
+         <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.08"/>
+  </joint>
+
+<!--IMU plugin-->
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+</robot>
