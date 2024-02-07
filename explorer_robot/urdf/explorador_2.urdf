@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.4.2-27-gc3b3358  Build Version: 1.4.6891.25992
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="explorador_2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.01222 -0.27237 -0.016945"
+        rpy="0 0 0" />
+      <mass
+        value="0.44098" />
+      <inertia
+        ixx="0.002226"
+        ixy="3.277E-07"
+        ixz="-1.0453E-09"
+        iyy="0.0030789"
+        iyz="-3.5014E-08"
+        izz="0.0046564" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.66667 0.69804 0.76863" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="izq_sup_link">
+    <inertial>
+      <origin
+        xyz="1.675E-14 3.0531E-16 0.015093"
+        rpy="0 0 0" />
+      <mass
+        value="0.1915" />
+      <inertia
+        ixx="0.00019087"
+        ixy="-2.9056E-21"
+        ixz="-1.2535E-17"
+        iyy="0.00019087"
+        iyz="-2.0727E-19"
+        izz="0.0003375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/izq_sup_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.79216 0.79216 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/izq_sup_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="izq_sup_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11348 -0.36537 -0.016936"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="izq_sup_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="izq_inf_link">
+    <inertial>
+      <origin
+        xyz="1.675E-14 2.9837E-16 0.015093"
+        rpy="0 0 0" />
+      <mass
+        value="0.1915" />
+      <inertia
+        ixx="0.00019087"
+        ixy="-2.6383E-21"
+        ixz="-1.2538E-17"
+        iyy="0.00019087"
+        iyz="-2.0747E-19"
+        izz="0.0003375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/izq_inf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.79216 0.79216 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/izq_inf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="izq_inf_joint"
+    type="revolute">
+    <origin
+      xyz="0.088886 -0.36537 -0.016946"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="izq_inf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="der_sup_link">
+    <inertial>
+      <origin
+        xyz="1.6764E-14 3.1225E-16 -0.022907"
+        rpy="0 0 0" />
+      <mass
+        value="0.1915" />
+      <inertia
+        ixx="0.00019087"
+        ixy="-7.4539E-20"
+        ixz="-1.2555E-17"
+        iyy="0.00019087"
+        iyz="-2.1727E-19"
+        izz="0.0003375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/der_sup_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.79216 0.79216 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/der_sup_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="der_sup_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11348 -0.14137 -0.016936"
+      rpy="-1.5708 -0.66691 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="der_sup_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="der_inf_link">
+    <inertial>
+      <origin
+        xyz="1.6778E-14 3.1919E-16 -0.022907"
+        rpy="0 0 0" />
+      <mass
+        value="0.1915" />
+      <inertia
+        ixx="0.00019087"
+        ixy="4.7434E-20"
+        ixz="-1.2562E-17"
+        iyy="0.00019087"
+        iyz="-2.3994E-19"
+        izz="0.0003375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/der_inf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.79216 0.79216 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/der_inf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="der_inf_joint"
+    type="revolute">
+    <origin
+      xyz="0.088886 -0.14137 -0.016946"
+      rpy="-1.5708 -0.66691 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="der_inf_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+
+  <link
+    name="corr_der_link">
+    <inertial>
+      <origin
+        xyz="-0.10117 0.00051759 0.02"
+        rpy="0 0 0" />
+      <mass
+        value="0.12544" />
+      <inertia
+        ixx="0.00031624"
+        ixy="1.3191E-07"
+        ixz="-4.6615E-18"
+        iyy="0.0012898"
+        iyz="-2.0705E-18"
+        izz="0.0015726" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/corr_der_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.196 0.2157 0.92157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/corr_der_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="corr_der_joint"
+    type="fixed">
+    <origin
+      xyz="0.088886 -0.14137 -0.016946"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="corr_der_link" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <!--                                                                  -->
+  <!--                        ruedas                                    -->
+  <!--                                                                  -->
+  <link
+    name="corr_izq_link">
+<property name="PI" value="3.1415926535897931" />
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.12544" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/corr_izq_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://explorador_2/meshes/corr_izq_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="corr_izq_joint"
+    type="fixed">
+    <origin
+      xyz="-0.11348 -0.40337 -0.016936"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="corr_izq_link" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+
+
+  <gazebo reference="izq_sup_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="izq_inf_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="der_sup_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="der_inf_link">
+    <material>Gazebo/White</material>
+ </gazebo>
+  <gazebo reference="corr_der_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="corr_izq_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+
+    <!--  A partir de aqui va la parte del Kinect-->
+    <!--  A partir de aqui va la parte del Kinect-->
+    <!--  A partir de aqui va la parte del Kinect-->
+
+    <!-- add kinect -->
+      <!--joint name="kinect_joint" type="fixed">
+        <origin xyz="0 -0.3 0.4" rpy="0 0 0" />
+        <parent link="base_link"/>
+        <child link="kinect_link"/>
+      </joint>
+
+      <link name="kinect_link">
+        <inertial>
+          <mass value="0.00001"/>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <inertia ixx="1e-6" ixy="0.0" ixz="0.0" iyy="1e-6" iyz="0.0" izz="1e-6"/>
+        </inertial>
+
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+            <mesh filename="package://explorador_2/meshes/sensors/kinect.dae"/>
+          </geometry>
+        </visual>
+
+        <collision>
+          <origin rpy="0 0 0" xyz="0 0 0"/>
+          <geometry>
+            <box size="0.064 0.121 0.0381"/>
+          </geometry>
+        </collision>
+
+      </link>
+
+      <joint name="camera_optical_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708" />
+        <parent link="kinect_link"/>
+        <child link="camera_link_optical"/>
+      </joint>
+
+    <link name="camera_link_optical">
+    </link>
+
+      <gazebo reference="kinect_link">
+        <sensor name="kinect_link_camera" type="depth">
+          <always_on>true</always_on>
+          <update_rate>20.0</update_rate>
+          <camera>
+            <horizontal_fov>1.04719666667</horizontal_fov>
+            <image>
+              <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.05</near>
+              <far>8.0</far>
+            </clip>
+          </camera>
+          <plugin filename="libgazebo_ros_openni_kinect.so" name="kinect_camera_controller">
+            <baseline>0.1</baseline>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>10</updateRate>
+
+            <cameraName>camera</cameraName>
+            <imageTopicName>/camera/color/image_raw</imageTopicName>
+            <cameraInfoTopicName>camera/color/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+            <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+            <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
+
+            <frameName>camera_link_optical</frameName>
+
+            <distortion_k1>0.0</distortion_k1>
+            <distortion_k2>0.0</distortion_k2>
+            <distortion_k3>0.0</distortion_k3>
+            <distortion_t1>0.0</distortion_t1>
+            <distortion_t2>0.0</distortion_t2>
+            <pointCloudCutoff>0.4</pointCloudCutoff>
+          </plugin>
+
+        </sensor>
+
+      </gazebo-->
+
+
+   <!--  A partir de aqui va la parte del Kinect-->
+    <!--  A partir de aqui va la parte del Kinect-->
+    <!--  A partir de aqui va la parte del Kinect-->
+
+<!-- Depth Camera Intel RealSense D435i -->
+  <link name="realsense_link">
+    <collision>
+      <origin xyz="-0.2 -0.2 -0.5" rpy="0 0 0"/>
+      <geometry>
+       <mesh filename="package://uvd_description/meshes/realsense_link.stl"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="-0.2 -0.2 -0.5" rpy="0 0 0"/>
+      <geometry>
+       <mesh filename="package://uvd_description/meshes/realsense_link.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+   
+  <joint name="realsense_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="realsense_link"/>
+    <axis xyz="0 0 0" />
+    <origin xyz="0.14 0 0.675" rpy="0 0 0"/>
+  </joint>
+  <joint name="realsense_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+    <parent link="realsense_link"/>
+    <child link="realsense_optical_link"/>
+  </joint>
+  <link name="realsense_optical_link"/>
+  
+  <gazebo reference="realsense_link">
+   <sensor name="realsense" type="depth">
+    <update_rate>20</update_rate>
+    <camera>
+     <!-- <pose>0 0 0 0 1.5707 0</pose> -->
+      <horizontal_fov>1.047198</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.05</near>
+        <far>3</far>
+      </clip>
+    </camera>
+    <plugin name="realsense_controller" filename="libgazebo_ros_openni_kinect.so">
+      <baseline>0.2</baseline>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>1.0</updateRate>
+      <cameraName>realsense_ir</cameraName>
+      <imageTopicName>/realsense/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/realsense/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/realsense/depth/image_raw</depthImageTopicName>
+      <depthImageInfoTopicName>/realsense/depth/camera_info</depthImageInfoTopicName>
+      <pointCloudTopicName>/realsense/depth/points</pointCloudTopicName>
+      <frameName>realsense_optical_link</frameName>
+      <pointCloudCutoff>0.5</pointCloudCutoff>
+      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+      <distortionK1>0.00000001</distortionK1>
+      <distortionK2>0.00000001</distortionK2>
+      <distortionK3>0.00000001</distortionK3>
+      <distortionT1>0.00000001</distortionT1>
+      <distortionT2>0.00000001</distortionT2>
+      <CxPrime>0</CxPrime>
+      <Cx>0</Cx>
+      <Cy>0</Cy>
+      <focalLength>0</focalLength>
+      <hackBaseline>0</hackBaseline>
+    </plugin>
+   </sensor>
+  </gazebo>
+
+
+</robot>

@@ -1,0 +1,50 @@
+<launch>
+
+  <!-- 1. Definición de parámetros para gazebo -->
+  <arg name="limited" default="false"  doc="If true, limits joint range [-PI, PI] on all joints." />
+  <arg name="paused" default="true" doc="Starts gazebo in paused mode" />
+  <arg name="gui" default="true" doc="Starts gazebo gui" />
+
+<arg name="urdf_path" default="$(find explorador_2)/urdf/explorador_2.urdf"/>
+<param name="robot_description" textfile="$(arg urdf_path)" />
+
+  <!-- 2. se carga el nuevo mundo TASAR_3.world sobre un mundo vacio -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--arg name="world_name" default="$(find explorador_2)/worlds/TASAR_3.world" /-->
+    <!--arg name="world_name" default="$(find explorador_2)/worlds/heightmap.world" /-->
+    <arg name="world_name" default="$(find explorador_2)/worlds/isla_ocean.world" />
+    <!--arg name="world_name" default="worlds/empty.world"/-->
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+ <!-- 3. Se publican los tf -->
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+
+  <!-- 3. Se carga el robot 1-->
+  <node
+    name="spawn_model_2"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find Jaguar_30)/urdf/Jaguar_30.urdf -urdf -model Jaguar_30 -x -2 -y 3 -z 15.1"
+    output="screen" />
+ <!-- 4. Se carga el robot 2-->
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find explorador_2)/urdf/explorador_2.urdf -urdf -model explorador_22 -x -2 -y 0 -z 15.1"
+    output="screen" />
+
+
+ <!-- 6. publico los estados del robot -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+    <remap from="/joint_states" to="/robot_igus_final/joint_states" />
+
+</launch>
+
