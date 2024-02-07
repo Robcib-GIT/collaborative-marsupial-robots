@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.4.2-27-gc3b3358  Build Version: 1.4.6891.25992
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Jaguar_30">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.631946559392651 -0.327990037363724 -0.0457153417189122"
+        rpy="0 0 0" />
+      <mass
+        value="28.6218517789205" />
+      <inertia
+        ixx="0.534566826228912"
+        ixy="0.0010457967003689"
+        ixz="0.00551123058138156"
+        iyy="1.12473773098407"
+        iyz="9.5351373509542E-06"
+        izz="1.47771618364946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="r1">
+    <inertial>
+      <origin
+        xyz="0 -4.22529744546762E-05 0.0425728570235023"
+        rpy="0 0 0" />
+      <mass
+        value="1.24851342685823" />
+      <inertia
+        ixx="0.0045564354033512"
+        ixy="-1.0842021724855E-19"
+        ixz="4.28386913073862E-19"
+        iyy="0.00455965626561237"
+        iyz="-1.98209617856446E-06"
+        izz="0.00416874617871985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r1"
+    type="revolute">
+    <origin
+      xyz="0.869293936399061 -0.0666227783369659 -0.0439503643535075"
+      rpy="-1.5707963267949 -0.314929109723463 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="r1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="r2">
+    <inertial>
+      <origin
+        xyz="-2.27208082692054E-05 3.56241311734867E-05 -0.109195635360468"
+        rpy="0 0 0" />
+      <mass
+        value="1.24851342685822" />
+      <inertia
+        ixx="0.00455736673665303"
+        ixy="-1.46024469365094E-06"
+        ixz="1.0658380344917E-06"
+        iyy="0.00455872493231054"
+        iyz="-1.67113570523354E-06"
+        izz="0.00416874617871984" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r2"
+    type="revolute">
+    <origin
+      xyz="0.399293990420997 0 -0.0437250188021958"
+      rpy="-1.5707963267949 -0.0431581617886059 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="r3">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 -4.2252974454704E-05 -0.157427142976498"
+        rpy="0 0 0" />
+      <mass
+        value="1.24851342685823" />
+      <inertia
+        ixx="0.0045564354033512"
+        ixy="-5.42101086242752E-19"
+        ixz="9.35971406716002E-20"
+        iyy="0.00455965626561237"
+        iyz="-1.98209617856407E-06"
+        izz="0.00416874617871985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r3"
+    type="revolute">
+    <origin
+      xyz="0.86929393639906 -0.386622778336966 -0.0439503643535074"
+      rpy="-1.5707963267949 1.2090121165327 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="r4">
+    <inertial>
+      <origin
+        xyz="0 -4.22529744547595E-05 -0.157427142976498"
+        rpy="0 0 0" />
+      <mass
+        value="1.24851342685823" />
+      <inertia
+        ixx="0.0045564354033512"
+        ixy="-1.19262238973405E-18"
+        ixz="-9.96640141563091E-19"
+        iyy="0.00455965626561238"
+        iyz="-1.98209617856405E-06"
+        izz="0.00416874617871985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/r4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r4"
+    type="revolute">
+    <origin
+      xyz="0.399293990420997 -0.386622778336966 -0.0437250188021958"
+      rpy="-1.5707963267949 1.20901211653096 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="r4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="f1">
+    <inertial>
+      <origin
+        xyz="-0.0788518164673575 0.0016669729568521 -0.0403640337365136"
+        rpy="0 0 0" />
+      <mass
+        value="1.44865809139601" />
+      <inertia
+        ixx="0.00466422368196858"
+        ixy="0.000465210106840853"
+        ixz="0.00113574330795392"
+        iyy="0.0193982793710202"
+        iyz="-1.66189708261499E-05"
+        izz="0.0201483680817828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f1"
+    type="revolute">
+    <origin
+      xyz="0.869293936399061 0 -0.0439503643535074"
+      rpy="1.5707963267949 -0.0342025106505539 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="f1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="f2">
+    <inertial>
+      <origin
+        xyz="-0.0788636618850037 -0.000954250034909308 -0.0403640337365136"
+        rpy="0 0 0" />
+      <mass
+        value="1.44865809139601" />
+      <inertia
+        ixx="0.0046495927583523"
+        ixy="-2.5170145741147E-05"
+        ixz="0.00113566830544715"
+        iyy="0.0194129102946365"
+        iyz="2.1131771251448E-05"
+        izz="0.0201483680817828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f2"
+    type="revolute">
+    <origin
+      xyz="0.399293990420997 0 -0.0437250188021958"
+      rpy="-1.5707963267949 -0.0431581617886059 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="f2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="f3">
+    <inertial>
+      <origin
+        xyz="-0.0787883956431739 -0.00357441897597157 0.191258744600452"
+        rpy="0 0 0" />
+      <mass
+        value="1.44865809139601" />
+      <inertia
+        ixx="0.00466756752204849"
+        ixy="-0.000515439218718668"
+        ixz="0.00113433886016749"
+        iyy="0.0193949355309403"
+        iyz="5.88591714803683E-05"
+        izz="0.0201483680817828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f3"
+    type="revolute">
+    <origin
+      xyz="0.869293936399061 -0.421622778336966 -0.0439503643535077"
+      rpy="-1.5707963267949 -0.0342025106505539 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="f3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="f4">
+    <inertial>
+      <origin
+        xyz="-0.0788636618850017 -0.000954250034921486 0.191258744600452"
+        rpy="0 0 0" />
+      <mass
+        value="1.44865809139601" />
+      <inertia
+        ixx="0.0046495927583523"
+        ixy="-2.51701457411091E-05"
+        ixz="0.00113566830544715"
+        iyy="0.0194129102946365"
+        iyz="2.11317712514446E-05"
+        izz="0.0201483680817829" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/f4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f4"
+    type="revolute">
+    <origin
+      xyz="0.399293990420997 -0.421622778336966 -0.0437250188021958"
+      rpy="1.5707963267949 -0.0431581617886337 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="f4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="h1">
+    <inertial>
+      <origin
+        xyz="0.234467099687084 -0.00928550472554336 -3.19189119579733E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.16560785623554" />
+      <inertia
+        ixx="0.00806806160974636"
+        ixy="1.41251453667315E-05"
+        ixz="1.58316423976283E-17"
+        iyy="0.0525310925362345"
+        iyz="-1.13842810123554E-17"
+        izz="0.0601138837353568" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/h1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/h1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="h1"
+    type="fixed">
+    <origin
+      xyz="0.399293990420978 -0.091622778336966 -0.0495302687057647"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="h1" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="h2">
+    <inertial>
+      <origin
+        xyz="-0.235850235776262 -0.00799954407268776 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.1813217497872" />
+      <inertia
+        ixx="0.0082440146290639"
+        ixy="5.48652628262903E-06"
+        ixz="-8.901847148848E-18"
+        iyy="0.0529634548749615"
+        iyz="1.30290454172957E-18"
+        izz="0.0607132369030633" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/h2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/h2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="h2"
+    type="fixed">
+    <origin
+      xyz="0.399293990420978 -0.561622778336966 -0.0495302687057647"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="h2" />
+    <axis
+      xyz="0 0 0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="bas1">
+    <inertial>
+      <origin
+        xyz="-0.187894104288664 -0.0341836239249735 0.0539336427700658"
+        rpy="0 0 0" />
+      <mass
+        value="0.438172562606386" />
+      <inertia
+        ixx="0.000483648569127725"
+        ixy="-0.00121788289597534"
+        ixz="0.000446419356320919"
+        iyy="0.00696266128767451"
+        iyz="8.12770158057105E-05"
+        izz="0.00705996276429711" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/bas1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/bas1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bas1"
+    type="fixed">
+    <origin
+      xyz="0.844257278462699 -0.331168353078346 0.0611237015201654"
+      rpy="1.5707963267949 0.573577668505077 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bas1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="p1">
+    <inertial>
+      <origin
+        xyz="-0.362845058028624 -0.0659942729812834 0.0622564282765993"
+        rpy="0 0 0" />
+      <mass
+        value="0.228887113791296" />
+      <inertia
+        ixx="9.73141247477889E-05"
+        ixy="-0.000402361328669883"
+        ixz="-4.54744006430305E-11"
+        iyy="0.00223636751105941"
+        iyz="-1.6740231337749E-10"
+        izz="0.00230968952642795" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/p1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/p1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="p1"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bas1" />
+    <child
+      link="p1" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="tap1">
+    <inertial>
+      <origin
+        xyz="0.118780209860298 0.0200517576635519 -0.077195824737856"
+        rpy="0 0 0" />
+      <mass
+        value="1.71755022410884" />
+      <inertia
+        ixx="0.0498201649820762"
+        ixy="-0.0382786712708755"
+        ixz="8.57293452059561E-05"
+        iyy="0.160446116014319"
+        iyz="1.78500436700248E-05"
+        izz="0.134658601745901" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/tap1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/tap1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tap1"
+    type="fixed">
+    <origin
+      xyz="-0.515815194224712 0 0.0622564308380305"
+      rpy="0 0 0.702938544695449" />
+    <parent
+      link="p1" />
+    <child
+      link="tap1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="rampa_des">
+    <inertial>
+      <origin
+        xyz="-0.785282450667336 0.0104305000111618 -0.265000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="1.40524777960769" />
+      <inertia
+        ixx="0.0320948127575299"
+        ixy="-0.00334456125849637"
+        ixz="1.48431212063645E-16"
+        iyy="0.123723394126944"
+        iyz="-1.0916372686925E-17"
+        izz="0.0918745263867961" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/rampa_des.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/rampa_des.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rampa_des"
+    type="prismatic">
+    <origin
+      xyz="0.0977328615672696 -0.0226374759620587 0.188097294268708"
+      rpy="0 0 0.265986583822593" />
+    <parent
+      link="tap1" />
+    <child
+      link="rampa_des" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="bas2">
+    <inertial>
+      <origin
+        xyz="-0.187108340822752 0.0382515799093195 -0.0349914141893558"
+        rpy="0 0 0" />
+      <mass
+        value="0.438172562606385" />
+      <inertia
+        ixx="0.000540402523384696"
+        ixy="0.0013593113434545"
+        ixz="0.000444574733650783"
+        iyy="0.00690590733341756"
+        iyz="-9.08267647535683E-05"
+        izz="0.00705996276429713" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/bas2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/bas2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bas2"
+    type="fixed">
+    <origin
+      xyz="0.436340363562162 -0.212985909567805 0.0611237015201654"
+      rpy="1.5707963267949 0.72467017951688 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="bas2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+  <link
+    name="p2">
+    <inertial>
+      <origin
+        xyz="-0.295976066442685 0.0605229948269987 -0.026668628682822"
+        rpy="0 0 0" />
+      <mass
+        value="0.228887113791296" />
+      <inertia
+        ixx="0.000115860779297583"
+        ixy="0.00044857880537704"
+        ixz="-1.04547626226095E-10"
+        iyy="0.00221782085650962"
+        iyz="-1.38424166013918E-10"
+        izz="0.00230968952642795" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/p2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Jaguar_30/meshes/p2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="p2"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bas2" />
+    <child
+      link="p2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <safety_controller
+      k_velocity="0" />
+  </joint>
+
+  <gazebo reference="f1">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="f2">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="f3">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="f4">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="h2">
+    <material>Gazebo/Black</material>
+  </gazebo>
+<gazebo reference="r1">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="r2">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="r3">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="r4">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="h2">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="h1">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="rampa_des">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+  <gazebo reference="tap1">
+    <material>Gazebo/Wood</material>
+  </gazebo>
+  <gazebo reference="bas1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="bas2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+</robot>
